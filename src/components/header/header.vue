@@ -74,7 +74,7 @@ export default {
     data(){
         return {
             flag:false,
-            classMap:['decrease','discount','spacial','invoice','guarantee']
+            classMap:['decrease','discount','special','invoice','guarantee']
         }
     },
     methods:{

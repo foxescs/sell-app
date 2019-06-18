@@ -28,7 +28,7 @@
     &.invoice{
         @include bg-image($invoice_1)
     }
-    &.spacial{
+    &.special{
         @include bg-image($special_1)
     }
     &.discount{
