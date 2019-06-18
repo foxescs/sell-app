@@ -30,7 +30,8 @@
         <div class="background">
             <img :src="seller.avatar" alt="">
         </div>
-        <div class="detail" v-show="flag">
+        <transition name="fade">
+            <div class="detail" v-show="flag" >
             <div class="wrapper">
                 <div class="content">
                     <h1 class="name">{{seller.name}}</h1>
@@ -58,10 +59,11 @@
                     </div>
                 </div>
             </div>
-            <div class="close">
+            <div class="close" @click=closeDetail()>
                 <i class="icon-close"></i>
             </div>
         </div>
+        </transition>
     </div>
 </template>
 
@@ -78,6 +80,9 @@ export default {
     methods:{
         showDetail(){
             this.flag=!this.flag;
+        },
+        closeDetail(){
+            this.flag=!this.flag;
         }
     },
     props:{
@@ -93,6 +98,13 @@ export default {
 
 <style lang='scss' scoped>
 @import '../../common/css/mixin.scss';
+
+.fade-enter-active,.fade-leave-active{
+    transition:opacity 0.5s;
+}
+.fade-enter,.fade-leave-to{
+    opacity:0;
+}
 
 .head-wrapper{
     position:relative;
@@ -239,13 +251,14 @@ export default {
         }
     }
     .detail{
+        z-index:100;
         position:fixed;
-        background-color:rgba(7,17,27,0.8);
         overflow:auto;
         left:0;
         top:0;
         width:100%;
         height:100%;
+        background-color:rgba(7,17,27,0.8);
         .wrapper{
             min-height:100%;
             .content{
