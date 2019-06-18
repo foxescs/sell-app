@@ -34,7 +34,28 @@
             <div class="wrapper">
                 <div class="content">
                     <h1 class="name">{{seller.name}}</h1>
-                    <stars :size="48" :score="seller.score"></stars>
+                    <stars :size="48" :score="seller.score" class="detail-star"></stars>
+                    <div class="special-info" v-show="seller.supports">
+                        <div class="seperate" >
+                            <span class="left-seperate"></span>
+                            <span class="info">优惠信息</span>
+                            <span class="right-seperate"></span>
+                        </div>
+                        <div class="wrapper">
+                            <div class="seperate-info" v-for="(item,i) in seller.supports" :key=i >
+                                <span :class="classMap[item.type]" class="type-item"></span>
+                                <span class="text-info">{{item.description}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bulletin-info">
+                        <div class="seperate">
+                            <span class="left-seperate"></span>
+                            <span class="info">商家公告</span>
+                            <span class="right-seperate"></span>
+                        </div>
+                        <div class="seperate-info">{{seller.bulletin}}</div>
+                    </div>
                 </div>
             </div>
             <div class="close">
@@ -137,6 +158,7 @@ export default {
                         @include bg-image('discount_1')
                     }
                 }
+                
                 .support{
                     display:inline-block;
                     margin-left:4px;
@@ -236,6 +258,117 @@ export default {
                     font-weight:700;
                     color:white;
                     text-align:center;
+                }
+                .detail-star{
+                    text-align: center;
+                    margin-top:16px;
+                }
+                .special-info{
+                    padding:28px 36px 24px 36px;
+                    .seperate{
+                        font-size:0;
+                        .left-seperate{
+                            display:inline-block;
+                            height:0;
+                            border-bottom:1px solid rgba(225,225,225,0.2);
+                            width:112px;
+                            margin-right:12px;
+                            margin-bottom:9px;
+                        }
+                        .info{
+                            display:inline-block;
+                            font-weight:500;
+                            font-size:18px; 
+                            vertical-align: center;                       
+                        }
+                        .right-seperate{
+                            display:inline-block;
+                            height:0;
+                            border-bottom:1px solid rgba(225,225,225,0.2);
+                            width:112px;
+                            margin-left:12px;
+                            margin-bottom:9px;
+                        }
+                    }
+                    .wrapper{
+                        margin-top:24px;
+                        .seperate-info{
+                            margin-right:24px;
+                            .type-item{
+                                display:inline-block;
+                                width:16px;
+                                height:16px;
+                                background-size:16px 16px;
+                                background-repeat:no-repeat;
+                                margin-bottom:12px;
+                                &:last-child{
+                                    margin-bottom:0;
+                                }
+                                &.decrease{
+                                    @include bg-image('decrease_1')
+                                }
+                                &.guarantee{
+                                    @include bg-image('guarantee_1')
+                                }
+                                &.invoice{
+                                    @include bg-image('invoice_1')
+                                }
+                                &.spacial{
+                                    @include bg-image('special_1')
+                                }
+                                &.discount{
+                                    @include bg-image('discount_1')
+                                }
+                            }
+                            .text-info{
+                                margin-left:6px;
+                                font-size:12px;
+                                color:white;
+                                line-height:12px;
+                                font-weight:200;
+                                vertical-align: top;
+                                margin-top:2px;
+                                display:inline-block;
+                            }
+                        
+                        }
+                    }
+                    
+                }
+                .bulletin-info{
+                    padding:28px 36px 24px 36px;
+                    .seperate{
+                        font-size:0;
+                        .left-seperate{
+                            display:inline-block;
+                            height:0;
+                            border-bottom:1px solid rgba(225,225,225,0.2);
+                            width:112px;
+                            margin-right:12px;
+                            margin-bottom:9px;
+                        }
+                        .info{
+                            display:inline-block;
+                            font-weight:500;
+                            font-size:18px; 
+                            vertical-align: center;                       
+                        }
+                        .right-seperate{
+                            display:inline-block;
+                            height:0;
+                            border-bottom:1px solid rgba(225,225,225,0.2);
+                            width:112px;
+                            margin-left:12px;
+                            margin-bottom:9px;
+                        }
+                    }
+                    .seperate-info{
+                        padding:24px 12px 0 12px;
+                        line-height:24px;
+                        font-size:12px;
+                        font-weight:200;
+                        vertical-align: center;
+                    }
                 }
             }
         }
