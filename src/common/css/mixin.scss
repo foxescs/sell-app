@@ -18,6 +18,24 @@
     }
 }
 
+@mixin icon-abstarct($decrease_1,$guarantee_1,$invoice_1,$special_1,$discount_1){
+    &.decrease{
+        @include bg-image($decrease_1)
+    }
+    &.guarantee{
+        @include bg-image($guarantee_1)
+    }
+    &.invoice{
+        @include bg-image($invoice_1)
+    }
+    &.spacial{
+        @include bg-image($special_1)
+    }
+    &.discount{
+        @include bg-image($discount_1)
+    }
+}
+
 .clearFix{
     &:after{
         display:block;

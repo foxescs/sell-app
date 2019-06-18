@@ -154,21 +154,7 @@ export default {
                     height:12px;
                     background-size:12px 12px;
                     background-repeat:no-repeat;
-                    &.decrease{
-                        @include bg-image('decrease_1')
-                    }
-                    &.guarantee{
-                        @include bg-image('guarantee_1')
-                    }
-                    &.invoice{
-                        @include bg-image('invoice_1')
-                    }
-                    &.spacial{
-                        @include bg-image('special_1')
-                    }
-                    &.discount{
-                        @include bg-image('discount_1')
-                    }
+                    @include icon-abstarct('decrease_1','guarantee_1','invoice_1','special_1','discount_1');
                 }
                 
                 .support{
@@ -317,21 +303,7 @@ export default {
                                 &:last-child{
                                     margin-bottom:0;
                                 }
-                                &.decrease{
-                                    @include bg-image('decrease_1')
-                                }
-                                &.guarantee{
-                                    @include bg-image('guarantee_1')
-                                }
-                                &.invoice{
-                                    @include bg-image('invoice_1')
-                                }
-                                &.spacial{
-                                    @include bg-image('special_1')
-                                }
-                                &.discount{
-                                    @include bg-image('discount_1')
-                                }
+                                @include icon-abstarct('decrease_1','guarantee_1','invoice_1','special_1','discount_1');
                             }
                             .text-info{
                                 margin-left:6px;
