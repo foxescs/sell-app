@@ -12,7 +12,7 @@
             <ul>
                 <li v-for="(item,i) in goods" :key=i>
                     <h1 class="item-name">{{item.name}}</h1>
-                    <ul>
+                    <ul >
                         <li v-for="(details,j) in item.foods" :key=j>
                             <img :src="details.icon" alt="" class="icon">
                             <div class="pic-content">
@@ -75,13 +75,16 @@ export default {
                 .goods-item{
                     height:54px;
                     line-height:14px;
+                    display:table;
                     @include border-1px( rgba(7,17,27,0.1));
                     box-sizing: border-box;
                     padding:12px;
                     vertical-align: middle;
                     text-align: center;
+                    width:100%;
                     .goods-type{
                         display:inline-block;
+                        margin-top:1px;
                         width:12px;
                         height:12px;
                         background-size:12px 12px;
@@ -89,6 +92,9 @@ export default {
                         @include icon-abstarct('decrease_3','guarantee_3','invoice_3','special_3','discount_3');
                     }
                     .goods-name{   
+                        display:table-cell;
+                        text-align: center;
+                        vertical-align: middle;
                         font-size:12px;
                         font-weight:100;
                         color:black;
@@ -121,6 +127,7 @@ export default {
             .pic-content{
                 margin:18px 12px 18px 10px;
                 display:inline-block;
+                width:162px;
                 .name{
                     font-size:14px;
                     margin-top:2px;
@@ -132,6 +139,11 @@ export default {
                     font-size:10px;
                     color:rgb(147,153,159);
                     line-height: 10px;
+                    padding:2px;
+                    width:100%;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
                 }
                 .sale-count{
                     font-size:0;
