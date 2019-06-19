@@ -69,6 +69,7 @@ export default {
         .goods-title{
             flex:0 0 80px;
             background: #f3f5f7;
+            overflow:auto;
             .goods-title-list{
                 overflow: hidden;
                 font-size:0;
@@ -105,7 +106,7 @@ export default {
 
         }
         .goods-content{
-            // overflow: hidden;
+            overflow: auto;
 
             .item-name{
                 font-size:14px;
@@ -127,7 +128,7 @@ export default {
             .pic-content{
                 margin:18px 12px 18px 10px;
                 display:inline-block;
-                width:162px;
+                width:150px;
                 .name{
                     font-size:14px;
                     margin-top:2px;
