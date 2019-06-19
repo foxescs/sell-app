@@ -9,7 +9,7 @@
             </ul>
         </div>
         <div class="goods-content">
-            <ul>
+            <ul class="li-goods-list">
                 <li v-for="(item,i) in goods" :key=i>
                     <h1 class="item-name">{{item.name}}</h1>
                     <ul >
