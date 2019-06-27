@@ -14,7 +14,9 @@
                     <h1 class="item-name">{{item.name}}</h1>
                     <ul >
                         <li v-for="(details,j) in item.foods" :key=j>
-                            <img :src="details.icon" alt="" class="icon">
+                            <div class="box">
+                                <img :src="details.icon" alt="" class="icon">
+                            </div>
                             <div class="pic-content">
                                 <div class="name">{{details.name}}</div>
                                 <div class="simple-name" v-show="details.description">{{details.description}}</div>
@@ -69,7 +71,6 @@ export default {
         .goods-title{
             flex:0 0 80px;
             background: #f3f5f7;
-            overflow:auto;
             .goods-title-list{
                 overflow: hidden;
                 font-size:0;
@@ -106,8 +107,6 @@ export default {
 
         }
         .goods-content{
-            overflow: auto;
-
             .item-name{
                 font-size:14px;
                 line-height:14px;
@@ -119,14 +118,17 @@ export default {
                 padding-left:12px;
                 
             }
-            .icon{
+            .box{
+                display:inline-block;
+                .icon{
                     width:72px;
                     height:72px;
                     padding-top:18px;
                     padding-left:18px;
+                }
             }
             .pic-content{
-                margin:18px 12px 18px 10px;
+                padding:18px 12px 18px 10px;
                 display:inline-block;
                 width:150px;
                 .name{
